@@ -7,7 +7,8 @@ public class StringAlgorithms {
      */
     public static String printCharacters(String word) {
         // TODO: Implement this method
-        return "";
+        
+        return word;
     }
 
 
@@ -18,6 +19,11 @@ public class StringAlgorithms {
      */
     public static String reverseWord(String word) {
         // TODO: Implement this method
+        String drow = "";
+        int length = word.length();
+        while (length>0){
+            drow += word.substring(length, length)
+        }
         return "";
     }
 
