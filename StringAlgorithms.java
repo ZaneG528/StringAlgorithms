@@ -38,12 +38,23 @@ public class StringAlgorithms {
      */
     public static String capitalizeString(String sentence) {
         // TODO: Implement this method
-        String ABC = sentance;
-        String Sentance = sentance;
-        while (i!=-1){
-            ABC = (Sentance.substring(0,Sentance.indexOf(" ")+1)+toUpperCase(Sentance.substring(Sentance.indexOf(" ")+1,Sentance.indexOf(" ")+2))+Sentance.substring(Sentance.indexOf(" ")+2)
+        String ABC = sentence;
+        String Sentance = sentence;
+        String capLetter = sentence.substring(0,1);
+        capLetter = capLetter.toUpperCase();
+        ABC=capLetter+sentence.substring(1);
+        int abcd;
+        for (int i =3; i>0;i--){
+             capLetter = Sentance.substring(Sentance.indexOf(" ")+1,Sentance.indexOf(" ")+2);
+             capLetter = capLetter.toUpperCase();
+             abcd = Sentance.indexOf(" ");
+              Sentance= Sentance.substring(0,Sentance.indexOf(" "))+"_"+Sentance.substring(Sentance.indexOf(" ")+1);
+              System.out.println(Sentance);
+              ABC = ABC.substring(0,abcd)+capLetter+ABC.substring(abcd+1);
+            //ABC = ABC.substring(0,ABC.indexOf(" "))+capLetter+ABC.substring(Sentance.indexOf(" ")+2);
+           // Sentance = Sentance.substring(0,Sentance.indexOf(" "))+"*"+Sentance.substring(Sentance.indexOf(" ")+1);
         }
-        return "";
+        return ABC;
     }
 
 
@@ -88,7 +99,7 @@ public class StringAlgorithms {
 
         System.out.println("\nTesting capitalizeString:");
         // Example:
-        // System.out.println(capitalizeString("the quick brown fox"));
+        System.out.println(capitalizeString("the quick brown fox"));
 
         System.out.println("\nTesting detectPalindrome:");
         // Example:
