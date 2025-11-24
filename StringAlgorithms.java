@@ -43,14 +43,13 @@ public class StringAlgorithms {
         String capLetter = sentence.substring(0,1);
         capLetter = capLetter.toUpperCase();
         ABC=capLetter+sentence.substring(1);
-        int abcd;
-        for (int i =3; i>0;i--){
+        int x;
+        while(Sentance.indexOf(" ")!=-1){
              capLetter = Sentance.substring(Sentance.indexOf(" ")+1,Sentance.indexOf(" ")+2);
              capLetter = capLetter.toUpperCase();
-             abcd = Sentance.indexOf(" ");
+             x = Sentance.indexOf(" ");
               Sentance= Sentance.substring(0,Sentance.indexOf(" "))+"_"+Sentance.substring(Sentance.indexOf(" ")+1);
-              System.out.println(Sentance);
-              ABC = ABC.substring(0,abcd)+capLetter+ABC.substring(abcd+1);
+              ABC = ABC.substring(0,x+1)+capLetter+ABC.substring(x+2);
             //ABC = ABC.substring(0,ABC.indexOf(" "))+capLetter+ABC.substring(Sentance.indexOf(" ")+2);
            // Sentance = Sentance.substring(0,Sentance.indexOf(" "))+"*"+Sentance.substring(Sentance.indexOf(" ")+1);
         }
@@ -65,7 +64,11 @@ public class StringAlgorithms {
      */
     public static boolean detectPalindrome(String word) {
         // TODO: Implement this method
-        return false;
+        boolean pali = false;
+        if (word.equals(reverseWord(word))){
+        pali = true;
+        }
+        return pali;
     }
 
 
@@ -75,9 +78,27 @@ public class StringAlgorithms {
      * first character that appears exactly once. If no such
      * character exists, return a space ' '.
      */
-    public static char firstUniqueChar(String word) {
+    public static String firstUniqueChar(String word) {
         // TODO: Implement this method
-        return ' ';
+        boolean unique = false;
+        String word1 = word;
+        String uniqueChar = "";
+        String testingChar = "";
+        for (int z = 0;unique == false; z++){
+           testingChar= word.substring(z,z+1);
+           word1=word.substring(z+1);
+           //System.out.println(word1);
+           if (word1.indexOf(testingChar)==-1){
+              unique = true;
+              //System.out.println("If test");
+             uniqueChar = testingChar;
+             //System.out.println(uniqueChar);
+           }
+           else{
+            word1=word;
+           }
+        }
+        return uniqueChar;
     }
 
 
@@ -103,10 +124,10 @@ public class StringAlgorithms {
 
         System.out.println("\nTesting detectPalindrome:");
         // Example:
-        // System.out.println(detectPalindrome("racecar"));
+        System.out.println(detectPalindrome("racecar"));
 
         System.out.println("\nTesting firstUniqueChar:");
         // Example:
-        // System.out.println(firstUniqueChar("swiss"));
+        System.out.println(firstUniqueChar("abc"));
     }
 }
