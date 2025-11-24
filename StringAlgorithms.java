@@ -80,11 +80,11 @@ public class StringAlgorithms {
      * first character that appears exactly once. If no such
      * character exists, return a space ' '.
      */
-    public static String firstUniqueChar(String word) {
+    public static char firstUniqueChar(String word) {
         // TODO: Implement this method
         boolean unique = false;
         String word1 = word;
-        String uniqueChar = "";
+        char uniqueChar = ' ';
         String testingChar = "";
         for (int z = 0;unique == false; z++){
            testingChar= word.substring(z,z+1);
@@ -93,7 +93,7 @@ public class StringAlgorithms {
            if (word1.indexOf(testingChar)==-1){
               unique = true;
               //System.out.println("If test");
-             uniqueChar = testingChar;
+             uniqueChar = testingChar.charAt(0);
              //System.out.println(uniqueChar);
            }
            else{
