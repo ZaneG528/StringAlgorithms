@@ -65,9 +65,11 @@ public class StringAlgorithms {
     public static boolean detectPalindrome(String word) {
         // TODO: Implement this method
         boolean pali = false;
-        if (word.equals(reverseWord(word))){
+        String word3 = word.toLowerCase();
+        if (word3.equals(reverseWord(word3))){
         pali = true;
         }
+        
         return pali;
     }
 
@@ -124,10 +126,10 @@ public class StringAlgorithms {
 
         System.out.println("\nTesting detectPalindrome:");
         // Example:
-        System.out.println(detectPalindrome("racecar"));
+        System.out.println(detectPalindrome("rAcecaR"));
 
         System.out.println("\nTesting firstUniqueChar:");
         // Example:
-        System.out.println(firstUniqueChar("abc"));
+        System.out.println(firstUniqueChar("abca"));
     }
 }
